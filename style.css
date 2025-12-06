@@ -1,0 +1,128 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#6ee7b7;
+  --muted:#9ca3af;
+}
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(180deg,#071024,#07122b);
+  color:#e6eef6;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.wrap{
+  width:min(700px, 95%);
+  padding:20px;
+}
+.card{
+  background:rgba(255,255,255,0.04);
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(12px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+.icon {
+  font-size:32px;
+  background:#07211a;
+  padding:8px;
+  border-radius:8px;
+}
+header{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.lead{
+  color:var(--muted);
+}
+.controls{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+}
+input{
+  flex:1;
+  padding:10px;
+  border-radius:8px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.1);
+  color:white;
+  transition: box-shadow .2s;
+}
+input:focus{
+  outline:none;
+  box-shadow: 0 0 8px var(--accent);
+}
+button{
+  padding:10px 14px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:#07211a;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 10px var(--accent);
+}
+.todolist{ margin-top:20px; padding:0; list-style:none; }
+.item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:10px;
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;
+  animation: itemPop .25s ease;
+}
+@keyframes itemPop {
+  from { opacity:0; transform: scale(.95); }
+  to   { opacity:1; transform: scale(1); }
+}
+.item:hover{
+  transform:translateY(-2px);
+}
+.text{
+  flex:1;
+  transition: opacity .3s;
+}
+.done{
+  text-decoration:line-through;
+  opacity:0.5;
+}
+.check-anim{
+  width:18px;
+  height:18px;
+  border-radius:4px;
+  border:2px solid rgba(255,255,255,0.1);
+  transition: background .2s ease, transform .2s ease;
+}
+.checked{
+  background:var(--accent);
+  border-color:var(--accent);
+  transform: scale(1.2);
+}
+.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+  color:var(--muted);
+  border-radius:6px;
+  padding:4px 8px;
+  transition: 0.2s;
+}
+
+.ghost:hover{
+  background:rgba(255,255,255,0.1);
+}

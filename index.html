@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>To-Do List — Ding when Done</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="application" aria-label="To do list with sound">
+      <header>
+  <div class="icon">📝</div>
+  <div>
+    <h1>To-Do List — Ding on Done</h1>
+    <p class="lead">A simple to-do app that saves your tasks and gives a satisfying ding when you complete one.</p>
+  </div>
+      </header>
+
+      <section style="margin-top:12px">
+        <div class="controls">
+          <input id="taskInput" type="text" placeholder="Add a new task and press Enter or click Add" aria-label="New task">
+          <button id="addBtn">Add</button>
+        </div>
+
+        <ul id="list" class="todolist" aria-live="polite"></ul>
+
+        <footer>
+          <div class="hint small">Tip: press Enter to add • click task to toggle done</div>
+          <div class="meta small">Items: <span id="count">0</span></div>
+        </footer>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
